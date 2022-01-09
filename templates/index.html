@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Korean Number Guessing Game{% endblock %}
+{% block content %}
+    <p>What {{number_system}} number is this {{number}}</p>
+    <form method="POST" action = "/">
+        <input type="text" name="answer">
+        <input type="hidden" name="number_system" value={{number_system}}>
+        <input type="hidden" name="number" value={{number}}>
+        <input class="btn btn-primary" type="submit" value="submit">
+    </form>
+{% endblock %}

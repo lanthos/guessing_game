@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Korean Guessing Game End Page{% endblock %}
+{% block content %}
+    <p>
+        {{ results }}
+      Click the button below to start over.
+    </p>
+
+    <div>
+        <form action="/" method="get">
+            <p>
+                <input type="submit" value="Start Over" />
+            </p>
+        </form>
+    </div>
+{% endblock %}
