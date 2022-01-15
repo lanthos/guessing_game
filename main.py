@@ -70,7 +70,6 @@ def calculate_native(number) -> str:
         return f"{native[int(tens)]}{native[int(one)]}"
 
 
-
 systems = {
     "native": calculate_native,
     "sino": calculate_sino
@@ -93,5 +92,5 @@ def index():
         return render_template("complete.html", results=results)
 
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
