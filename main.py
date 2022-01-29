@@ -61,7 +61,7 @@ def calculate_native(number) -> str:
     tens, one = snumber[0], snumber[1]
 
     if number < 20:
-        return f"열{native[one]}"
+        return f"열{native[int(one)]}"
 
     tens = int(tens + "0")
     if one == "0":
@@ -87,9 +87,9 @@ def index():
         number_system = request.form.get("number_system")
         answer = request.form.get("answer")
         converted = systems[number_system](int(number))
-        results = f"You answered {answer} and the correct answer was {converted}: "
-        results += "잘 했어!" if answer == converted else "땡!"
-        return render_template("complete.html", results=results)
+        results = f"You answered {answer} and the correct answer was {converted}:"
+        result_answer = "잘 했어!" if answer == converted else "땡!"
+        return render_template("complete.html", results=results, answer=result_answer)
 
 
 if __name__ == "__main__":
